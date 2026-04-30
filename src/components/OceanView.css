@@ -1,0 +1,138 @@
+.ocean-exploration-wrapper {
+  position: relative;
+  width: 100%;
+  /* 내부 스크롤 대신 부모/바디 스크롤을 따르도록 변경 */
+  overflow: visible; 
+}
+
+.ocean-content {
+  position: relative;
+  width: 100%;
+  height: 300dvh; /* 바다 깊이 3배 */
+  background: linear-gradient(to bottom, var(--bg-ocean-top), var(--bg-ocean-bottom));
+  /* 스크롤 시 배경이 끊기지 않도록 설정 */
+}
+
+/* Depth Bar UI */
+.depth-bar-container {
+  position: fixed; /* 뷰포트 고정 */
+  right: 25px;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 60dvh;
+  width: 40px;
+  display: flex;
+  z-index: 1000;
+  pointer-events: none;
+}
+
+.depth-line {
+  position: relative;
+  width: 2px;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 1px;
+  margin-right: 12px;
+}
+
+.depth-pointer {
+  position: absolute;
+  left: -4px;
+  width: 10px;
+  height: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.depth-label {
+  position: absolute;
+  right: 20px;
+  display: flex;
+  align-items: baseline;
+  gap: 2px;
+  color: var(--primary);
+  font-weight: 700;
+  text-shadow: 0 0 10px var(--primary-glow);
+}
+
+.depth-value {
+  font-size: 18px;
+}
+
+.depth-unit {
+  font-size: 10px;
+  opacity: 0.8;
+}
+
+.pointer-icon {
+  transform: rotate(90deg);
+  color: var(--primary);
+  filter: drop-shadow(0 0 5px var(--primary-glow));
+}
+
+.depth-markers {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  font-size: 10px;
+  color: var(--text-muted);
+  font-weight: 600;
+  padding: 5px 0;
+}
+
+/* Creature styling */
+.creature-wrapper {
+  position: absolute;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: float 4s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.creature-wrapper.editing {
+  cursor: grab;
+  animation: none;
+  pointer-events: auto;
+  border-radius: 50%;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.2);
+}
+
+.creature-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--glass-bg);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--glass-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  box-shadow: var(--glass-shadow);
+}
+
+.creature-icon.freediving { border-color: var(--primary); box-shadow: 0 0 15px var(--primary-glow); }
+.creature-icon.scuba { border-color: var(--secondary); }
+.creature-icon.training { border-color: var(--tertiary); box-shadow: 0 0 15px var(--tertiary-glow); }
+
+.edit-mode-btn {
+  z-index: 1100;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  color: #fff;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: var(--glass-bg);
+}
+
+.edit-mode-btn.active {
+  background: var(--primary);
+  box-shadow: 0 0 15px var(--primary-glow);
+}

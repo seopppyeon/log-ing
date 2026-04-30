@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+
+/* 1. 모든 요소 박스 모델 및 스크롤바 숨기기 */
+* {
+  box-sizing: border-box !important;
+  -webkit-tap-highlight-color: transparent;
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+}
+
+*::-webkit-scrollbar {
+  display: none !important;
+}
+
+:root {
+  --bg-dark: #090e17;
+  --bg-ocean-top: #0a2342;
+  --bg-ocean-bottom: #051329;
+  --primary: #00d2ff;
+  --primary-glow: rgba(0, 210, 255, 0.4);
+  --secondary: #3a7bd5;
+  --tertiary: #ff9a9e;
+  --tertiary-glow: rgba(255, 154, 158, 0.4);
+  --accent: #ff4b2b;
+  --text-main: #f8f9fa;
+  --text-muted: #8b9bb4;
+  --glass-bg: rgba(255, 255, 255, 0.05);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+  --nav-height: 70px;
+}
+
+/* 2. 바디 잠금 해제 및 새로고침 활성화 */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100dvh;
+  overflow-x: hidden; /* 가로 흔들림 방지 */
+  overflow-y: auto;   /* 세로 스크롤 허용 */
+  overscroll-behavior-y: auto !important; /* 당겨서 새로고침 활성화 */
+  font-family: 'Outfit', sans-serif;
+  background-color: var(--bg-dark);
+  color: var(--text-main);
+  -webkit-font-smoothing: antialiased;
+  scroll-behavior: smooth;
+}
+
+#root {
+  width: 100%;
+  min-height: 100dvh;
+}
+
+/* Glass Panel Utility */
+.glass-panel {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  border-radius: 1.25rem;
+  box-shadow: var(--glass-shadow);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: #fff;
+  box-shadow: 0 4px 15px var(--primary-glow);
+}
+
+.input-field {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--glass-border);
+  border-radius: 0.75rem;
+  padding: 0.75rem 1rem;
+  color: var(--text-main);
+  font-size: 1rem;
+}

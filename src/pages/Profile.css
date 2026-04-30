@@ -1,0 +1,138 @@
+.profile-container {
+  padding: 20px;
+  min-height: 100vh;
+  padding-bottom: 100px;
+}
+
+.profile-header {
+  margin-bottom: 20px;
+  padding: 20px;
+  text-align: center;
+}
+
+.profile-header h1 {
+  font-size: 24px;
+  background: linear-gradient(90deg, #fff, var(--primary));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.profile-content {
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+.profile-image-section {
+  position: relative;
+}
+
+.image-wrapper {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 3px solid var(--primary);
+  padding: 5px;
+  position: relative;
+  background: var(--bg-ocean-top);
+  box-shadow: 0 0 20px var(--primary-glow);
+}
+
+.profile-img, .profile-img-placeholder {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image-edit-btn {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  background: var(--primary);
+  color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.image-edit-btn:hover {
+  transform: scale(1.1);
+}
+
+.profile-info-section {
+  width: 100%;
+  text-align: center;
+}
+
+.name-display-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.name-display-group h2 {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.edit-btn {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 5px;
+  transition: color 0.3s ease;
+}
+
+.edit-btn:hover {
+  color: var(--primary);
+}
+
+.name-edit-group {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+}
+
+.save-btn {
+  gap: 8px;
+  width: auto;
+  min-width: 120px;
+}
+
+.auth-section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.login-btn, .logout-btn {
+  width: 200px;
+}
+
+.logout-btn {
+  background: rgba(255, 75, 43, 0.15);
+  color: #ff4b2b;
+  border: 1px solid rgba(255, 75, 43, 0.3);
+}
+
+.logout-btn:hover {
+  background: rgba(255, 75, 43, 0.25);
+  transform: translateY(-2px);
+}
