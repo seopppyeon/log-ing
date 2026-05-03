@@ -13,7 +13,7 @@ const ExportCard = ({ log, onClose }) => {
     try {
       const canvas = await html2canvas(cardRef.current, {
         scale: 2, // High resolution
-        backgroundColor: '#090e17',
+        backgroundColor: getComputedStyle(document.documentElement).getPropertyValue('--bg-dark').trim() || '#ffffff',
         useCORS: true,
       });
       
@@ -33,9 +33,11 @@ const ExportCard = ({ log, onClose }) => {
   return (
     <div className="export-modal-overlay">
       <div className="export-modal-content">
-        <button className="close-btn" onClick={onClose}>
-          <X size={24} />
-        </button>
+        <div className="export-modal-header">
+          <button className="close-btn-top" onClick={onClose}>
+            <X size={24} />
+          </button>
+        </div>
         
         {/* This is the area that gets captured by html2canvas */}
         <div className="export-card-capture-area" ref={cardRef}>
@@ -94,9 +96,14 @@ const ExportCard = ({ log, onClose }) => {
           </div>
         </div>
 
-        <button className="btn btn-primary download-btn" onClick={handleDownload}>
-          <Download size={18} style={{ marginRight: '8px' }} /> {strings.export.saveImage}
-        </button>
+        <div className="export-actions">
+          <button className="btn btn-primary download-btn" onClick={handleDownload}>
+            <Download size={18} style={{ marginRight: '8px' }} /> {strings.export.saveImage}
+          </button>
+          <button className="btn btn-secondary close-btn-bottom" onClick={onClose}>
+            {strings.detail.closeButton || "닫기"}
+          </button>
+        </div>
       </div>
     </div>
   );

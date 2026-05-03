@@ -3,6 +3,7 @@ import useStore from '../store/useStore';
 import { Plus } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import ExportCard from '../components/ExportCard';
+import LogDetail from '../components/LogDetail';
 import { strings } from '../constants/strings';
 import './List.css';
 
@@ -10,18 +11,21 @@ const List = () => {
   const logs = useStore((state) => state.logs);
   const userName = useStore((state) => state.userName);
   const navigate = useNavigate();
+  const [selectedLog, setSelectedLog] = useState(null);
   const [selectedExportLog, setSelectedExportLog] = useState(null);
+
+  const handleOpenExport = (log) => {
+    setSelectedLog(null);
+    setSelectedExportLog(log);
+  };
+
+  const sortedLogs = [...logs].sort((a, b) => new Date(b.date) - new Date(a.date));
 
   return (
     <div className="list-container">
-      <div className="list-header glass-panel">
-        <h1>{userName}님의 로그</h1>
-        <p>{strings.list.divesCount(logs.length)}</p>
-      </div>
-
       <div className="logs-list">
-        {logs.map((log) => (
-          <div key={log.id} className="log-card glass-panel" onClick={() => setSelectedExportLog(log)}>
+        {sortedLogs.map((log) => (
+          <div key={log.id} className="log-card glass-panel" onClick={() => setSelectedLog(log)}>
             <div className="log-card-header">
               <span className={`category-badge ${log.category.toLowerCase()}`}>
                 {log.category}
@@ -51,6 +55,14 @@ const List = () => {
             <Plus size={18} style={{ marginRight: '8px' }} /> {strings.list.recordButton}
           </button>
         </div>
+      )}
+
+      {selectedLog && (
+        <LogDetail 
+          log={selectedLog} 
+          onClose={() => setSelectedLog(null)} 
+          onExport={handleOpenExport}
+        />
       )}
 
       {selectedExportLog && (

@@ -1,19 +1,13 @@
 .log-create-container {
-  position: fixed;
-  top: 45%; /* 키보드 공간 확보를 위해 약간 위로 배치 */
-  left: 50%;
-  transform: translate(-50%, -50%);
-  padding: 1.5rem 1.5rem 2.5rem 1.5rem;
-  height: 80dvh; 
-  max-height: 80dvh;
-  width: 92%;
-  max-width: 500px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 100dvh;
+  padding: 1.5rem 1.5rem 6rem 1.5rem;
   overflow-y: auto !important; 
   touch-action: pan-y !important;
   background: var(--bg-dark);
-  border: 1px solid var(--glass-border);
-  border-radius: 1.5rem;
-  box-shadow: var(--glass-shadow);
   z-index: 1000;
   
   /* 스크롤바 디자인 (심플하게) */

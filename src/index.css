@@ -13,20 +13,20 @@
 }
 
 :root {
-  --bg-dark: #090e17;
-  --bg-ocean-top: #0a2342;
-  --bg-ocean-bottom: #051329;
-  --primary: #00d2ff;
-  --primary-glow: rgba(0, 210, 255, 0.4);
-  --secondary: #3a7bd5;
-  --tertiary: #ff9a9e;
-  --tertiary-glow: rgba(255, 154, 158, 0.4);
-  --accent: #ff4b2b;
-  --text-main: #f8f9fa;
-  --text-muted: #8b9bb4;
-  --glass-bg: rgba(255, 255, 255, 0.05);
-  --glass-border: rgba(255, 255, 255, 0.1);
-  --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+  --bg-dark: #ffffff;
+  --bg-ocean-top: #f0f4f8;
+  --bg-ocean-bottom: #e1e7ed;
+  --primary: #007aff;
+  --primary-glow: rgba(0, 122, 255, 0.2);
+  --secondary: #5856d6;
+  --tertiary: #ff2d55;
+  --tertiary-glow: rgba(255, 45, 85, 0.2);
+  --accent: #ff3b30;
+  --text-main: #1a1a1a;
+  --text-muted: #666666;
+  --glass-bg: rgba(255, 255, 255, 0.8);
+  --glass-border: rgba(0, 0, 0, 0.1);
+  --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.05);
   --nav-height: 70px;
 }
 

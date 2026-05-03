@@ -30,7 +30,7 @@
   position: relative;
   width: 2px;
   height: 100%;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(0, 0, 0, 0.1);
   border-radius: 1px;
   margin-right: 12px;
 }
@@ -89,7 +89,8 @@
   align-items: center;
   justify-content: center;
   animation: float 4s ease-in-out infinite;
-  pointer-events: none;
+  pointer-events: auto;
+  cursor: pointer;
 }
 
 .creature-wrapper.editing {
@@ -124,7 +125,7 @@
   align-items: center;
   gap: 8px;
   padding: 10px 16px;
-  color: #fff;
+  color: var(--text-main);
   font-weight: 600;
   font-size: 14px;
   cursor: pointer;

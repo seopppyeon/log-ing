@@ -33,22 +33,29 @@
 }
 
 .export-card-capture-area {
-  background: #090e17;
+  background: var(--bg-dark);
   border-radius: 24px;
   padding: 30px;
   border: 1px solid var(--glass-border);
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
   width: 100%;
 }
 
-.close-btn {
-  position: absolute;
-  top: -40px;
-  right: 0;
+.export-modal-header {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 10px;
+}
+
+.close-btn-top {
   background: none;
   border: none;
-  color: white;
+  color: var(--text-main);
   cursor: pointer;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .export-card-header {
@@ -123,7 +130,7 @@
 .stat-value {
   font-size: 18px;
   font-weight: 600;
-  color: #fff;
+  color: var(--text-main);
 }
 
 .export-creature-showcase {
@@ -186,7 +193,22 @@
   color: var(--text-muted);
 }
 
-.download-btn {
+.export-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
   width: 100%;
-  margin-top: 10px;
+}
+
+.export-actions .btn {
+  width: 100%;
+  padding: 14px;
+  font-size: 1rem;
+  border-radius: 1rem;
+}
+
+.close-btn-bottom {
+  background: var(--bg-ocean-top);
+  color: var(--text-main);
+  border: 1px solid var(--glass-border);
 }

@@ -3,6 +3,8 @@ import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
 import useStore from '../store/useStore';
 import { Edit2, Save, Navigation } from 'lucide-react';
 import { strings } from '../constants/strings';
+import LogDetail from './LogDetail';
+import ExportCard from './ExportCard';
 import './OceanView.css';
 
 const OceanView = () => {
@@ -12,6 +14,8 @@ const OceanView = () => {
   
   const [isEditMode, setIsEditMode] = useState(false);
   const [temporaryPositions, setTemporaryPositions] = useState({});
+  const [selectedLog, setSelectedLog] = useState(null);
+  const [selectedExportLog, setSelectedExportLog] = useState(null);
   const containerRef = useRef(null);
   const oceanContentRef = useRef(null);
 
@@ -60,6 +64,11 @@ const OceanView = () => {
       ...prev,
       [id]: { x: newX, y: newY }
     }));
+  };
+
+  const handleOpenExport = (log) => {
+    setSelectedLog(null);
+    setSelectedExportLog(log);
   };
 
   return (
@@ -117,6 +126,7 @@ const OceanView = () => {
               dragMomentum={false}
               dragElastic={0}
               onDragEnd={(e, info) => handleDragEnd(log.id, posX, posY, info)}
+              onClick={() => !isEditMode && setSelectedLog(log)}
             >
               <div className={`creature-icon ${log.category.toLowerCase()}`}>
                 {log.earned_creature}
@@ -125,6 +135,21 @@ const OceanView = () => {
           );
         })}
       </div>
+
+      {selectedLog && (
+        <LogDetail 
+          log={selectedLog} 
+          onClose={() => setSelectedLog(null)} 
+          onExport={handleOpenExport}
+        />
+      )}
+
+      {selectedExportLog && (
+        <ExportCard
+          log={selectedExportLog}
+          onClose={() => setSelectedExportLog(null)}
+        />
+      )}
     </div>
   );
 };

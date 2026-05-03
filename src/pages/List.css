@@ -1,8 +1,8 @@
 .list-container {
-  padding: 20px 20px 0 20px;
+  padding: 120px 20px 0 20px;
   width: 100%;
-  min-height: 100%;
-  touch-action: auto !important; /* 브라우저 제스처(새로고침 등) 허용 */
+  min-height: 100dvh;
+  touch-action: auto !important;
   background: var(--bg-dark);
 }
 
@@ -18,7 +18,7 @@
 
 .list-header h1 {
   font-size: 24px;
-  background: linear-gradient(90deg, #fff, var(--primary));
+  background: linear-gradient(90deg, var(--text-main), var(--primary));
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;

@@ -66,6 +66,10 @@ const useStore = create(
             : log
         )
       })),
+
+      deleteLog: (id) => set((state) => ({
+        logs: state.logs.filter(log => String(log.id) !== String(id))
+      })),
     }),
     {
       name: 'log-ing-storage',

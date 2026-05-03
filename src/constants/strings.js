@@ -62,6 +62,16 @@ export const strings = {
       duration: "훈련 시간",
     },
   },
+  detail: {
+    title: "로그 상세",
+    closeButton: "닫기",
+    exportButton: "로그 내보내기",
+    shareButton: "로그 공유하기",
+    shareSuccess: "링크가 클립보드에 복사되었습니다.",
+    shareFail: "공유하기를 지원하지 않는 브라우저입니다.",
+    deleteButton: "로그 삭제",
+    deleteConfirm: "정말로 이 로그를 삭제하시겠습니까? 삭제된 로그는 복구할 수 없습니다.",
+  },
   profile: {
     title: "내 프로필",
     login: "로그인",
